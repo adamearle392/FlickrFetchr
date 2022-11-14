@@ -71,17 +71,17 @@ fun DetailScreen(
                         Text(text = "Date Uploaded: ${viewModel.state.photoInfo!!.dateuploaded}")
                         Spacer(modifier = Modifier.height(16.dp))
                         if (viewModel.state.photoInfo!!.owner != null) {
-                            Text(text = "Owner NSID: ${viewModel.state.photoInfo!!.owner!!.nsid!!}")
+                            Text(text = "Owner NSID: ${viewModel.state.photoInfo!!.owner!!.nsid}")
                             Spacer(modifier = Modifier.height(16.dp))
-                            Text(text = "Owner Username: ${viewModel.state.photoInfo!!.owner!!.username!!}")
+                            Text(text = "Owner Username: ${viewModel.state.photoInfo!!.owner!!.username}")
                             Spacer(modifier = Modifier.height(16.dp))
-                            Text(text = "Owner Real Name: ${viewModel.state.photoInfo!!.owner!!.realname!!}")
+                            Text(text = "Owner Real Name: ${viewModel.state.photoInfo!!.owner!!.realname}")
                             Spacer(modifier = Modifier.height(16.dp))
-                            Text(text = "Owner Location: ${viewModel.state.photoInfo!!.owner!!.location!!}")
+                            Text(text = "Owner Location: ${viewModel.state.photoInfo!!.owner!!.location}")
                             Spacer(modifier = Modifier.height(16.dp))
-                            Text(text = "Owner Icon Server: ${viewModel.state.photoInfo!!.owner!!.iconserver!!}")
+                            Text(text = "Owner Icon Server: ${viewModel.state.photoInfo!!.owner!!.iconserver}")
                             Spacer(modifier = Modifier.height(16.dp))
-                            Text(text = "Owner Icon Farm: ${viewModel.state.photoInfo!!.owner!!.iconfarm!!}")
+                            Text(text = "Owner Icon Farm: ${viewModel.state.photoInfo!!.owner!!.iconfarm}")
                             Spacer(modifier = Modifier.height(16.dp))
                         }
                         AsyncImage(
