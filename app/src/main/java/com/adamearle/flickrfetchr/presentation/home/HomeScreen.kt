@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adamearle.flickrfetchr.presentation.util.PhotoCard
@@ -30,19 +31,24 @@ fun HomeScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Gray)
+            .testTag("${tag}_Column")
     ) {
         Text(
             text = "Adam's Gallery",
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
-                .padding(0.dp, 16.dp, 0.dp, 0.dp),
+                .padding(0.dp, 16.dp, 0.dp, 0.dp)
+                .testTag("${tag}_Text_GalleryTitle"),
             style = MaterialTheme.typography.h5
         )
         if (viewModel.state.gallery != null
             && viewModel.state.gallery!!.photos != null
             && viewModel.state.gallery!!.photos!!.isNotEmpty()
         ) {
-            LazyColumn {
+            LazyColumn(
+                modifier = Modifier
+                    .testTag("${tag}_LazyColumn")
+            ) {
                 items(viewModel.state.gallery!!.photos!!.size) {
                     val photo = viewModel.state.gallery?.photos?.get(it)
                     PhotoCard(

@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
@@ -33,23 +34,28 @@ fun DetailScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.Gray)
+                .testTag("${tag}_Column")
         ) {
             Text(
                 text = "ID: ${viewModel.state.photoInfo!!.id}",
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
-                    .padding(0.dp, 16.dp, 0.dp, 0.dp),
+                    .padding(0.dp, 16.dp, 0.dp, 0.dp)
+                    .testTag("${tag}_Text_DetailTitle"),
                 style = MaterialTheme.typography.h5
             )
             Card(
                 backgroundColor = Color.LightGray,
                 shape = RoundedCornerShape(10.dp),
-                modifier = Modifier.padding(16.dp)
+                modifier = Modifier
+                    .padding(16.dp)
+                    .testTag("${tag}_Card")
             ) {
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp)
+                        .testTag("${tag}_LazyColumn")
                 ) {
                     item {
                         AsyncImage(
