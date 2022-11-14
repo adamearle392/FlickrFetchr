@@ -15,3 +15,8 @@ Android app which fetches images from Flickr api
 - Jetpack Compose - New Kotlin based UI framework for Android for ease of UI development
 - RetroFit/Moshi - for fetching data from an api, converting to Json then converting to locally used kotlin objects
 - Coil - performant and lightweight image loading library based around kotlin
+
+## Demo video
+
+https://user-images.githubusercontent.com/37560129/201626373-44150673-dd0b-41f9-b2b1-6a4ad227dcc6.mp4
+
